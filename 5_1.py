@@ -12,7 +12,7 @@ screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 pygame.display.set_caption("Пинг_понг")
 
 PADDLE_WIDTH = 25
-PADDLE_HEIGHT = 100
+PADDLE_HEIGHT = 10000
 PADDLE_SPEED = 10
 
 BALL_SIZE = 10
@@ -106,7 +106,12 @@ while running:
         score1 += 1
         ball_rect.center = (SCREEN_WIDTH//2, SCREEN_HEIGHT//2)
 
-
+    if paddle1_rect.colliderect(ball_rect) or paddle2_rect.colliderect(ball_rect):
+        if BALL_SIZE > 0:
+            BALL_SIZE += 1
+        if BALL_SIZE < 0:
+            BALL_SIZE -= 1
+        BALL_SIZE*= -1
 
     screen.fill(BLACK)
     pygame.draw.rect(screen, WHITE, paddle1_rect)
