@@ -16,8 +16,8 @@ pygame.init()
 
 SCREEN_WIDTH = 1000
 SCREEN_HEIGHT = 800
-ROWS = 15
-COLS = 15
+ROWS = 500
+COLS = 500
 MARGIN = 2
 
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
